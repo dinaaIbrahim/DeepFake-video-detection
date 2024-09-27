@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Veriflick</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- font awesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static',filename='css/responsive.css')}}" rel="stylesheet" />
+
+  <style>
+    /* Circular logo */
+    .navbar-brand img {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 60px; /* Set the desired width */
+      height: 60px; /* Set the desired height */
+    }
+
+    .error{
+      color: red;
+    }
+
+    /* Navbar Text Color */
+    .header_section .navbar-nav .nav-link {
+      color: #000000 !important; /* Set text color to black */
+    }
+
+    .header_section .navbar-brand span {
+      color: #e93f1a; /* Set text color to register button color */
+      margin-left: 10px; /* Adjust margin as needed */
+      font-weight: bold; /* Set font weight to bold */
+    }
+
+    /* Login Section */
+    .login_section {
+      background-color: #f8f9fa; /* Set background color */
+      padding: 50px 0; /* Adjust padding as needed */
+    }
+
+    .login_form label {
+      display: block;
+      margin-bottom: 10px; /* Adjust margin as needed */
+      color: #495057; /* Set label color */
+      font-size: 16px; /* Set label font size */
+    }
+
+    .login_form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px; /* Adjust margin as needed */
+      border: 1px solid #ced4da; /* Set input border */
+      border-radius: 5px; /* Add border-radius for rounded corners */
+      font-size: 16px; /* Set input font size */
+    }
+
+    .login_form button {
+      background-color: #e93f1a; /* Use the same button color as in other sections */
+      color: #ffffff; /* Set button text color */
+      padding: 12px 20px; /* Adjust padding as needed */
+      border: none;
+      border-radius: 5px; /* Add border-radius for rounded corners */
+      cursor: pointer;
+      font-size: 18px; /* Set button font size */
+    }
+
+    .login_form button:hover {
+      background-color: #cc7000; /* Use the same button hover color as in other sections */
+    }
+
+    /* Contact Section */
+    .info_section {
+      background-color: #f8f9fa; /* Set background color */
+      padding: 50px 0; /* Adjust padding as needed */
+    }
+
+    .footer_contact h2 {
+      color: #000000; /* Set text color to black */
+      margin-bottom: 20px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .img-box {
+      margin-bottom: 20px;
+    }
+
+    /* Button style for "Get Started" */
+    .header_section .navbar-nav .nav-item.active .nav-link.get-started-btn,
+    .header_section .navbar-nav .nav-item .get-started-btn {
+      background-color: #e93f1a;
+      color: #ffffff !important; /* Set text color to white */
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .header_section .navbar-nav .nav-item.active .nav-link.get-started-btn:hover,
+    .header_section .navbar-nav .nav-item .get-started-btn:hover {
+      background-color: #cc7000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section starts -->
+  <header class="header_section">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+        <!-- Circular logo -->
+        <a class="navbar-brand mr-5" href="{{url_for('index')}}">
+          <img src="{{ url_for('static', filename='images/logoo.png') }}" alt="">
+          <span>
+            Veriflick
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('upload')}}"> Upload </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('result')}}"> Result </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('login')}}"> Login </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link get-started-btn" href="{{url_for('register')}}">Get Started</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+
+  <!-- Login Section -->
+  <section class="login_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Login
+        </h2>
+      </div>
+    </div>
+    <div class="container login_bg layout_padding2-top">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="login_form">
+            <form action="{{url_for('login')}}" method="post">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+              {% if msg %}
+                  <p class="error" >{{msg}}</p>
+              {% endif %}
+              <button type="submit">
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <!-- You can add an image related to the login section if needed -->
+            <!-- <img src="images/login-img.jpg" alt=""> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end login section -->
+
+  <!-- Contact Section -->
+  <section class="info_section layout_padding">
+    <div class="footer_contact">
+      <div class="heading_container">
+        <h2>
+          Contact Us
+        </h2>
+      </div>
+      <div class="box">
+        <a href="" class="img-box">
+          <img src="{{ url_for('static', filename='images/location.png') }}" alt="" class="img-1">
+          <img src="{{ url_for('static', filename='images/location-o.png') }}" alt="" class="img-2">
+        </a>
+        <a href="" class="img-box">
+          <img src="{{ url_for('static', filename='images/call.png') }}" alt="" class="img-1">
+          <img src="{{ url_for('static', filename='images/call-o.png') }}" alt="" class="img-2">
+        </a>
+        <a href="" class="img-box">
+          <img src="{{ url_for('static', filename='images/envelope.png') }}" alt="" class="img-1">
+          <img src="{{ url_for('static', filename='images/envelope-o.png') }}" alt="" class="img-2">
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+
+</body>
+
+</html>
